@@ -51,10 +51,7 @@ At each time step:
 | Small Shocks       | Delay consensus and keep diversity longer. |
 | Large/Frequent Shocks | Can prevent consensus entirely, leading to oscillating majority opinion. |
 
-### Example Visualization
-Add a PNG or GIF of the simulation here (e.g., opinion share over time).
 
----
 
 ## 🛠 How to Run Locally
 
@@ -104,5 +101,5 @@ This project is licensed under the MIT License – see [LICENSE](LICENSE) for de
 
 ## 👤 Author
 **Mahmudul Hasan**  
-Master’s in Business Analytics – TU Graz  
-[LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/Mahmudul-Hasan-24)
+Master’s of Computational Social System (Business Analytics) at Technical University of Graz and University of Graz  
+
