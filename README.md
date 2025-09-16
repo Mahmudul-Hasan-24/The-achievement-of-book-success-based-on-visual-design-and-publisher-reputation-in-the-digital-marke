@@ -62,16 +62,14 @@ At each time step:
 ```bash
 git clone https://github.com/Mahmudul-Hasan-24/Foundation-of-Computational-Social-System.git
 cd Foundation-of-Computational-Social-System
-2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
 bash
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\\Scripts\\activate
-3. Install dependencies
+### 3. Install dependencies
 bash
 pip install -r requirements.txt
-4. Run the notebook
-bash
-
+### 4. Run the notebook
 jupyter notebook notebooks/opinion_dynamics.ipynb
 📦 Dependencies
 networkx – network generation
@@ -82,16 +80,16 @@ matplotlib – plotting
 
 jupyter – notebook interface
 
-🚀 Future Extensions
+###🚀 Future Extensions
 Implement multi-opinion models (more than two states).
 
 Test effect of network topology variations (scale-free, random).
 
 Add adaptive networks where connections change over time.
 
-📜 License
+### 📜 License
 This project is licensed under the MIT License – see LICENSE for details.
 
-👤 Author
+### 👤 Author
 Mahmudul Hasan
 Master’s of Computational Social System (Business Analytics) at  Technical University of Graz and University of Graz
