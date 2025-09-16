@@ -1,93 +1,97 @@
-# Foundation of Computational social system 
+"""# 🧠 Opinion Dynamics Under External Shocks – An Agent-Based Modeling Approach
+
+## 📌 Project Overview
+This project models **opinion dynamics** in a population using an **agent-based simulation**.  
+The focus is on understanding how **external shocks** (such as policy changes or major events) affect:
+- Time to reach consensus
+- Stability of opinions
+- Level of polarization in the network
+
+
+---
+
+## 🗂 Repository Structure
+├── notebooks/
+│ └── opinion_dynamics.ipynb # Main simulation notebook
+├── report.pdf # Detailed report with methodology and results
+├── poster.pdf # Visual summary of the project
+└── requirements.txt # Python dependencies
 
 
 
-## Getting started
+---
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 🧠 Model Description
 
-## Add your files
+### Agents
+- Each agent represents an individual with a binary opinion (0 or 1).
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Network Topology
+- **Small-world network** generated using the Watts–Strogatz model to mimic real-world social networks.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.tugraz.at/0F9830A21DDD03A3/foundation-of-computational-social-system.git
-git branch -M main
-git push -uf origin main
-```
+### Dynamics
+At each time step:
+1. A random agent observes a neighbor.
+2. The agent adopts the neighbor's opinion with probability `p`.
+3. At predefined intervals, an **external shock** flips the opinions of a subset of agents.
 
-## Integrate with your tools
+### Observables
+- **Consensus Time** – number of steps until all agents share the same opinion.
+- **Polarization** – fraction of agents holding each opinion over time.
+- **Stability** – effect of repeated shocks on long-term opinion distribution.
 
-- [ ] [Set up project integrations](https://gitlab.tugraz.at/0F9830A21DDD03A3/foundation-of-computational-social-system/-/settings/integrations)
+---
 
-## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## 📊 Key Results
 
-## Test and Deploy
+| Scenario             | Finding |
+|--------------------|--------|
+| No External Shock  | Consensus is typically reached quickly (few thousand steps). |
+| Small Shocks       | Delay consensus and keep diversity longer. |
+| Large/Frequent Shocks | Can prevent consensus entirely, leading to oscillating majority opinion. |
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+---
 
-***
 
-# Editing this README
+## 🛠 How to Run Locally
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### 1. Clone this repository
+```bash
+git clone https://github.com/Mahmudul-Hasan-24/Foundation-of-Computational-Social-System.git
+cd Foundation-of-Computational-Social-System
+2. Create and activate a virtual environment
+bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\\Scripts\\activate
+3. Install dependencies
+bash
+pip install -r requirements.txt
+4. Run the notebook
+bash
 
-## Suggestions for a good README
+jupyter notebook notebooks/opinion_dynamics.ipynb
+📦 Dependencies
+networkx – network generation
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+numpy – numerical computations
 
-## Name
-Choose a self-explaining name for your project.
+matplotlib – plotting
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+jupyter – notebook interface
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+🚀 Future Extensions
+Implement multi-opinion models (more than two states).
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Test effect of network topology variations (scale-free, random).
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Add adaptive networks where connections change over time.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+📜 License
+This project is licensed under the MIT License – see LICENSE for details.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+👤 Author
+Mahmudul Hasan
+Master’s of Computational Social System (Business Analytics) at  Technical University of Graz and University of Graz
