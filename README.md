@@ -1,5 +1,4 @@
-# 🧠 Opinion Dynamics Under External Shocks – An Agent-Based Modeling Approach
-
+# 🧠 The achievement of book success based on visual design and publisher reputation in the digital marketplace
 ## 📌 Project Overview
 This project models **opinion dynamics** in a population using an **agent-based simulation**.  
 The focus is on understanding how **external shocks** (such as policy changes or major events) affect:
